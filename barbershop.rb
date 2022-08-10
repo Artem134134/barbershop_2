@@ -22,3 +22,21 @@ post '/' do
 
 	erb :message
 end
+
+get '/admin' do
+  erb :welcome
+end
+
+post '/admin' do
+	@login = params[:login]
+	@password = params[:password]
+
+	if @login == 'admin' and @password == 'secret' 
+		@message = 'Hi, admin!'
+		erb :welcome
+	else			
+		@message = 'Access denied!'
+		erb :welcome
+    end
+end
+
