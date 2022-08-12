@@ -3,23 +3,20 @@
 <head>
 
 <link href="styles.css" rel="stylesheet"  media="all" type="text/css" />
-<style>
 
-  body {background-color: whitesmoke}
-  h1   {color: black;}
-  p    {color: slategray;}
-</style>
 
 </head>
 
-<body>
+<body class="col_ws">
 
 
-  <h1><%= @title %></h1>
+  <h1 class="col_black"><%= @title %></h1>
 
-  <p style="text-align:center;"><%= @message %></p>
+  <p class="col_sg" style="text-align:center;">
+       <%= @message %>   
+  </p>
 
-  <p><a href="/">Back</a></p>
+  <p class="col_sg"><a href="/">Back</a></p>
 
 </body> 
 

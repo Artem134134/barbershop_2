@@ -3,36 +3,33 @@
 <head>
 <link href="styles.css" rel="stylesheet"  media="all" type="text/css" />
 
-<style>
-  body {background-color: teal}
-  h1   { color: black;}
-  p    {color: silver;}
-</style>
+
 </head>
-<body>
+
+<body class="col_teal">
   <title>Barbershop</title>
 
-  <h1 >Welcome to Barber Shop!</h1>
+  <h1 class="col_black">Welcome to Barber Shop!</h1>
 
-  <p style="font-size:160%; text-align:center;" >We are opend!</p>
+  <p class="col_silver" style="font-size:160%; text-align:center;" >We are opend!</p>
 
   <form action="/" method="POST">
-    <p>Enter your name: </p>                
+    <p class="col_silver">Enter your name: </p>                
   	<input type="text" name="user_name" /> 
-    <p>Enter your phone: </p>              
+    <p class="col_silver">Enter your phone: </p>              
   	<input type="text" name="phone" />     
-    <p>Enter date and time: </p>   
+    <p class="col_silver">Enter date and time: </p>   
   	<input type="text" name="date_time" /> </br>
                                            </br>
   	<input type="submit" /></br>   
   </form>
   
+
   </br>
   </br>
   </br>
-  </br>
-  <p><a href="/logfile">Appointment for a haircut</a></p>
-  <p><a href="/admin">Administration area...</a></p>
+  <p class="col_silver"><a href="/logfile">Appointment for a haircut</a></p>
+  <p class="col_silver"><a href="/admin">Administration area...</a></p>
 
 </body>
 

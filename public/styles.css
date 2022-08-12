@@ -3,3 +3,16 @@ body {font-family:courier;}
 h1   {text-align:center;}
 h2   {text-align:center;}
 p    {font-size:130%; }
+
+.col_azure  {background-color: azure;}
+.col_teal   {background-color: teal;}
+.col_ws     {background-color: whitesmoke;}
+.col_black  {color: black;}
+.col_gray   {color: gray;}
+.col_lgreen {color: limegreen;}
+.col_sg     {color: slategray;}
+.col_silver {color: silver;}
+
+#col_dimgray {background-color: dimgray;}
+#col_tomato  {color: tomato;}
+#col_salmon  {color: salmon ;}

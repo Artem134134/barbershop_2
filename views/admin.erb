@@ -4,26 +4,22 @@
 
 <link href="styles.css" rel="stylesheet"  media="all" type="text/css" />
 
-<style>
-  body {background-color: dimgray}
-  h1   {color: tomato;}
-  p    {color: black;}
-</style>
 </head>
-<body>
+
+<body id="col_dimgray">
 	
-<h1 >Administration area</h1>
+<h1 id="col_tomato">Administration area</h1>
 
-  <p >You must register in the system.</p>
+  <p class="col_black">You must register in the system.</p>
 
-  <p ><%= @title %></p>
-  <p><%= @message %></p>
+  <p class="col_black"><%= @title %></p>
+  <p class="col_black"><%= @message %></p>
 
   <form action="/admin" method="POST">
 
-	  <p>You typed: <%= @login %></p>
+	  <p class="col_black">You typed: <%= @login %></p>
 	  <input type="text" name="login" />
-	  <p>Your password: <%= @password %></p>
+	  <p class="col_black">Your password: <%= @password %></p>
 	  <input type="pasword" name="password" /></br>
 	  </br>
 	  <input type="submit" />
@@ -32,7 +28,7 @@
   </br>
   </br>
   </br>
-  <p><a href="/">Main page</a></p>
+  <p class="col_black"><a href="/">Main page</a></p>
 
 </body>
 

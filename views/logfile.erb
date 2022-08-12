@@ -2,23 +2,22 @@
 <html>
 <head>
 
-  <link href="styles.css" rel="stylesheet"  media="all" type="text/css" />
+  <link href="styles.css" rel="stylesheet"  media="all" 
+  type="text/css" />
 
-  <style>
-		body {background-color: azure;}
-		h2   {color: salmon ;}
-		p    {color: black;}
 
-	</style>
-</head>	
-  <body>
+</head>
 
-    <h2>Appointment for a haircut:</h2>
-    <p style="text-align:center;"><%= @message %></p>
+  <body class="col_azure">
+
+    <h1 id="col_salmon">Appointment for a haircut:</h1>
+    <p class="col_black" style="text-align:center;">
+      <%= @message %>
+   </p>
 
     </br>
     </br> 
-
+    
 	  <table border="1">
 		  <% @log.each_line do |line| %>
       <tr><td><%= line %></td></tr>
@@ -29,9 +28,9 @@
     </br>
     </br>
 
-    <p><a href="/admin">Back</a></p>
+    <p class="col_black"><a href="/admin">Back</a></p>
 
-    <p><a href="/">Main page</a></p>
+    <p class="col_black"><a href="/">Main page</a></p>
 
 </body>
 

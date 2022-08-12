@@ -4,24 +4,19 @@
 
 <link href="styles.css" rel="stylesheet"  media="all" type="text/css" />
 
-<style>
-  body {background-color: 	azure;}
-  h1   {color: limegreen;}
-  h2   {color: gray;}
-  p    {color: gray;}
-</style>
+
 </head>
 
-<body>
+ <body class="col_azure">
 
-<h1 >Protected zone</h1>
+<h1 class="col_lgreen">Protected zone</h1>
 
-  <p ><%= @title %></p>
+  <p class="col_gray"><%= @title %></p>
 
-  <p><%= @message %></p>
+  <p class="col_gray"><%= @message %></p>
 
-	<p>You typed:    <%= @login %></p>
-	<p>Your password:  ****** </p>
+	<p class="col_gray">You typed:    <%= @login %></p>
+	<p class="col_gray">Your password:  ****** </p>
 
 	
    <p><a href="/logfile">Logfile</a></p>
