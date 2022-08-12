@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<body>
+<style>
+body {background-color: dimgray}
+h1   {text-align:center; color: tomato;}
+p    {font-size:130%; color: black;}
+</style>
+
+<h1 >Administration area</h1>
+
+  <p >You must register in the system.</p>
+
+  <p ><%= @title %></p>
+  <p><%= @message %></p>
+
+  <form action="/admin" method="POST">
+
+	  <p>You typed: <%= @login %></p>
+	  <input type="text" name="login" />
+	  <p>Your password: <%= @password %></p>
+	  <input type="pasword" name="password" /></br>
+	  </br>
+	  <input type="submit" />
+  </form>
+
+  <p><a href="/">Main page</a></p>
+
+</body>
+</head>
+</html>
