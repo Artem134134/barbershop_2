@@ -10,10 +10,10 @@ post '/' do
 	@date_time = params[:date_time]
 
 	@title = 'Thank you!'
-	@message = "Dear visitor:#{@user_name} 
+	@message = "Dear visitor: #{@user_name} 
 	we'll be waiting for you at #{@date_time}"
 
-	f = File.open 'users.txt', 'a'
+	f = File.open("users.txt", "a")
 
 	f.write "User: #{@user_name},
 	  Phone: #{@phone},
@@ -39,4 +39,10 @@ post '/admin' do
 		erb :admin
     end
 end
+
+get '/logfile' do
+    @log = File.read("users.txt")          
+    erb :logfile 
+end
+
 
