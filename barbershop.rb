@@ -15,9 +15,9 @@ post '/' do
 
 	f = File.open("./public/users.txt", "a")
 
-	f.write "User: #{@user_name},
-	  Phone: #{@phone},
-	  Date and time: #{@date_time}"
+	f.write "User: #{@user_name}
+	  Phone: #{@phone}
+	  Date and time: #{@date_time}\n"
 	f.close
 	  erb :message
 end
@@ -41,8 +41,7 @@ post '/admin' do
 end
 
 get '/logfile' do
-    @log = File.read("./public/users.txt")  
-    @log.split        
+    @log = File.read("./public/users.txt")          
     erb :logfile 
 end
 
