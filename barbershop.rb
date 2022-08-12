@@ -32,7 +32,7 @@ post '/admin' do
 
 	if @login == 'admin' and @password == 'secret' 
 		@title = 'Access is allowed. Welcome'
-		@message = 'Hi, admin!'
+		@message = "Hi, admin: \ 'Artem134134'\ "
 		erb :protected
 	else			
 		@message = 'Access denied!'
