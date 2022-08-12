@@ -41,6 +41,7 @@ post '/admin' do
 end
 
 get '/logfile' do
+    @message = 'Thank you for being with us!'
     @log = File.read("./public/users.txt")          
     erb :logfile 
 end
