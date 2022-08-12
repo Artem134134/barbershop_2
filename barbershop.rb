@@ -11,9 +11,9 @@ post '/' do
 
 	@title = 'Thank you!'
 	@message = "Dear visitor: #{@user_name} 
-	we'll be waiting for you at #{@date_time}"
+	we'll be waiting for you at #{@date_time}."
 
-	f = File.open("users.txt", "a")
+	f = File.open("./public/users.txt", "a")
 
 	f.write "User: #{@user_name},
 	  Phone: #{@phone},
@@ -41,7 +41,8 @@ post '/admin' do
 end
 
 get '/logfile' do
-    @log = File.read("users.txt")          
+    @log = File.read("./public/users.txt")  
+    @log.split        
     erb :logfile 
 end
 
