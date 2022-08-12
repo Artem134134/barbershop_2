@@ -1,2 +1,5 @@
 /* Hello! I am ccs file */
 body {font-family:courier;}
+h1   {text-align:center;}
+h2   {text-align:center;}
+p    {font-size:130%; }
