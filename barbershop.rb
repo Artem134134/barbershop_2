@@ -1,7 +1,7 @@
 require 'sinatra'
 
 get '/' do
-	erb :index
+	  erb :index
 end
 
 post '/' do
@@ -19,12 +19,11 @@ post '/' do
 	  Phone: #{@phone},
 	  Date and time: #{@date_time}"
 	f.close
-
-	erb :message
+	  erb :message
 end
 
 get '/admin' do
-  erb :welcome
+     erb :admin
 end
 
 post '/admin' do
@@ -32,11 +31,12 @@ post '/admin' do
 	@password = params[:password]
 
 	if @login == 'admin' and @password == 'secret' 
+		@title = 'Access is allowed. Welcome'
 		@message = 'Hi, admin!'
-		erb :welcome
+		erb :protected
 	else			
 		@message = 'Access denied!'
-		erb :welcome
+		erb :admin
     end
 end
 
