@@ -1,16 +1,22 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <style>
+		body {background-color: azure;}
+		h2   {text-align:center; color: salmon ;}
+		p    {font-size:130%; color: black;}
+	</style>	
 <body>
-<style>
-body {background-color: azure;}
-h2   {text-align:center; color: salmon ;}
-p    {font-size:130%; color: black;}
-</style>
 
 <h2>Appointment for a haircut:</h2>
+<!-- <p><%= @log %></p> -->  
 
-  <p><%= @log %></p>  
+
+	<table border="1">
+		<% @log.each_line do |line| %>
+    <tr><td><%= line %></td></tr>
+    <% end %>
+  </table>
 
   <p><a href="/admin">Back</a></p>
 
