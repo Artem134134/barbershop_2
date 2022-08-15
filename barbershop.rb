@@ -1,5 +1,6 @@
 require 'sinatra'
 
+
 get '/' do
 	  erb :index
 end
@@ -13,13 +14,15 @@ post '/' do
 	@message = "Dear visitor: #{@user_name} 
 	we'll be waiting for you at #{@date_time}."
 
+	
 	f = File.open("./public/users.txt", "a")
-
 	f.write "User: #{@user_name}
 	  Phone: #{@phone}
 	  Date and time: #{@date_time}\n"
 	f.close
 	  erb :message
+
+	
 end
 
 get '/admin' do
