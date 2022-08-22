@@ -1,4 +1,3 @@
-@@ -0,0 +1,235 @@
 /*
  * Very simple jQuery Color Picker
  * https://github.com/tkrotoff/jquery-simplecolorpicker

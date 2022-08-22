@@ -13,7 +13,7 @@
     <script src="jquery.simplecolorpicker.js"></script>
 
     <link rel="stylesheet" href="jquery.simplecolorpicker.css">
-
+    
 </head>
 
 <body class="col_a">
@@ -62,7 +62,7 @@
 
 <div class="form-group">
     <label class="col_silver">What color do you want to paint: </label>
-    <select name="haircolor" id="color">
+    <select id="color" name="haircolor">
       <option value="green">Green</option>
       <option value="navy">Navy</option>
       <option value="blue">Blue</option>
@@ -98,8 +98,10 @@
 
 
   <script type="text/javascript">
-  $('.aaa').css('background-color','aliceblue');
-  $('#color').simplecolorpicker();
+  $(function() { 
+    $('.aaa').css('background-color','aliceblue');
+    $('#color').simplecolorpicker();
+   });
   </script>
   
 
