@@ -10,9 +10,6 @@
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="/vendor/bootstrap/js/bootstrap.min.js"></script>
 
-   <script src="script.js"></script>
-
-
 
 </head>
 
@@ -28,12 +25,12 @@
   <form action="/admin" method="POST">
   
 	  <p class="col_black">You typed: <%= @login %></p>
-	  <input type="text" name="login" />
+	  <input class="aaa" type="text" name="login" />
 	  <p class="col_black">Your password: <%= @password %></p>
-	  <input type="pasword" name="password" /></br>
+	  <input class="aaa" type="password" name="password" /></br>
 	  </br>
 
-	  <input type="submit" class="btn btn-light"/>
+	  <input type="submit" class="btn btn-warning"/>
   </form>
 
   </br>
@@ -41,6 +38,10 @@
   </br>
   <p ><a href="/">Main page</a></p>
 
+
+  <script type="text/javascript">
+  $('.aaa').css('background-color','aliceblue');
+  </script>
 </body>
 
 </html>

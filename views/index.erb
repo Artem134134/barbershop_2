@@ -10,8 +10,6 @@
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="/vendor/bootstrap/js/bootstrap.min.js"></script>
 
-    <script src="script.js"></script>
-
 </head>
 
 <body class="col_a">
@@ -49,7 +47,7 @@
   <form action="/" method="POST">
       <div class="mb-3">
       <select name="hairdresser"  class="form-select">
-  <option value="none" selected>
+  <option class="aaa" value="none" selected>
   Choose a hairdresser:
  </option>
   <option value="Walter White">Walter White</option>
@@ -61,21 +59,26 @@
     </br>
     <div class="mb-3">
     <p class="col_silver">Enter your name: </p>            
-  	<input type="text" name="user_name" /> 
+  	<input class="aaa" type="text" name="user_name" /> 
     </div>
 
     <div class="mb-3">
-    <p class="col_silver">Enter your phone: </p>           	<input type="text" name="phone" /> 
+    <p class="col_silver">Enter your phone: </p>          <input class="aaa" type="text" name="phone" /> 
     </div>
 
     <div class="mb-3">
     <p class="col_silver">Enter date and time: </p>   
-  	<input type="text" name="date_time" /> </br>
+  	<input class="aaa" type="text" name="date_time" /> </br>
     </div> 
 
     </br>
-  	<input type="submit" class="btn btn-secondary"/></br>   
+  	<input type="submit" class="btn btn-info"/></br>   
   </form>
+
+
+  <script type="text/javascript">
+  $('.aaa').css('background-color','aliceblue');
+  </script>
   
 
 </body>
