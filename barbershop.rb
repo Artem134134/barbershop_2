@@ -9,18 +9,20 @@ end
 post '/' do
 
 	@hairdresser = params[:hairdresser]
+	@haircolor = params[:haircolor]
 	@user_name = params[:user_name]
 	@phone = params[:phone]
 	@date_time = params[:date_time]
 
 	@title = 'Thank you!'
 	@message = "Dear visitor: #{@user_name},
-	 your hairdresser: #{@hairdresser}, 
+	 your hairdresser: #{@hairdresser}, haircolor:#{@haircolor}
 	we'll be waiting for you at #{@date_time}."
 
 	
 	f = File.open("./public/users.txt", "a")
 	f.write "Hairdresser: #{@hairdresser}
+	  Haircolor: #{@haircolor}
 	  User: #{@user_name}
 	  Phone: #{@phone}
 	  Date and time: #{@date_time}\n"

@@ -10,6 +10,10 @@
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="/vendor/bootstrap/js/bootstrap.min.js"></script>
 
+    <script src="jquery.simplecolorpicker.js"></script>
+
+    <link rel="stylesheet" href="jquery.simplecolorpicker.css">
+
 </head>
 
 <body class="col_a">
@@ -55,6 +59,23 @@
   <option value="Gus Fring">Gus Fring</option>
 </select>
 </div>
+
+<div class="form-group">
+    <label class="col_silver">What color do you want to paint: </label>
+    <select name="haircolor" id="color">
+      <option value="green">Green</option>
+      <option value="navy">Navy</option>
+      <option value="blue">Blue</option>
+      <option value="turquoise">Turquoise</option>
+      <option value="lightgreen">Light green</option>
+      <option value="yellow">Yellow</option>
+      <option value="orange">Orange</option>
+      <option value="red">Red</option>     
+      <option value="#dbadff">Purple</option>
+      <option value="pink">Pink</option>
+    </select>
+
+  </div>
     </br>
     </br>
     <div class="mb-3">
@@ -78,6 +99,7 @@
 
   <script type="text/javascript">
   $('.aaa').css('background-color','aliceblue');
+  $('#color').simplecolorpicker();
   </script>
   
 
