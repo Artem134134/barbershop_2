@@ -2,14 +2,14 @@
 <html>
 <head>
 
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+
 <link href="styles.css" rel="stylesheet"  media="all" type="text/css" />
 
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
 
 </head>
 
-<body id="col_dimgray">
+<body class="col_dimgray">
 	
 <h1 id="col_tomato">Administration area</h1>
 
@@ -19,12 +19,13 @@
   <p class="col_black"><%= @message %></p>
 
   <form action="/admin" method="POST">
-
+  
 	  <p class="col_black">You typed: <%= @login %></p>
 	  <input type="text" name="login" />
 	  <p class="col_black">Your password: <%= @password %></p>
 	  <input type="pasword" name="password" /></br>
 	  </br>
+
 	  <input type="submit" class="btn btn-light"/>
   </form>
 
