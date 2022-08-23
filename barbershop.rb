@@ -10,9 +10,26 @@ post '/' do
 
 	@hairdresser = params[:hairdresser]
 	@haircolor = params[:haircolor]
-	@user_name = params[:user_name]
+	@username = params[:username]
 	@phone = params[:phone]
-	@date_time = params[:date_time]
+	@datetime = params[:datetime]
+
+ 		   # hash for parameter validation
+   hh = {:username => 'Enter your name',
+         :phone => 'Enter your phone',
+         :datetime => 'Enter datetime'}
+
+          # for each key-value pair
+   hh.each do |key, value|
+          # if parameter is empty
+   if params[key] == ''
+          # assign @error variable value from hash hh
+    @error = hh[key]
+
+          # return view
+    return erb :index
+  end
+end
 
 	@title = 'Thank you!'
 	@message = "Dear visitor: #{@user_name},

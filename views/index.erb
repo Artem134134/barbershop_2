@@ -46,7 +46,6 @@
     <img src="https://static.tildacdn.com/tild6266-6139-4531-b431-313864393461/06-a-French-crop-wit.jpg" alt="Haircut-4" width="188" height="188">
   </div>
    </br>
-   </br>
 
   <form action="/" method="POST">
       <div class="mb-3">
@@ -71,16 +70,17 @@
       <option value="yellow">Yellow</option>
       <option value="orange">Orange</option>
       <option value="red">Red</option>     
-      <option value="#dbadff">Purple</option>
+      <option value="purple">Purple</option>
       <option value="pink">Pink</option>
     </select>
-
   </div>
-    </br>
+
+  <p class="col_red"><strong><%= @error %></strong></p>
+
     </br>
     <div class="mb-3">
     <p class="col_silver">Enter your name: </p>            
-  	<input class="aaa" type="text" name="user_name" /> 
+  	<input class="aaa" type="text" name="username" /> 
     </div>
 
     <div class="mb-3">
@@ -89,19 +89,18 @@
 
     <div class="mb-3">
     <p class="col_silver">Enter date and time: </p>   
-  	<input class="aaa" type="text" name="date_time" /> </br>
+  	<input class="aaa" type="text" name="datetime" /> </br>
     </div> 
 
     </br>
   	<input type="submit" class="btn btn-info"/></br>   
   </form>
 
-
   <script type="text/javascript">
-  $(function() { 
-    $('.aaa').css('background-color','aliceblue');
+    $(function(){
     $('#color').simplecolorpicker();
-   });
+    $('.aaa').css('background-color','aliceblue');
+    });
   </script>
   
 
