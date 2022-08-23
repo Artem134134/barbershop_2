@@ -25,7 +25,6 @@ post '/' do
    if params[key] == ''
           # assign @error variable value from hash hh
     @error = hh[key]
-
           # return view
     return erb :index
   end

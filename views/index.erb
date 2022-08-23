@@ -74,22 +74,26 @@
       <option value="pink">Pink</option>
     </select>
   </div>
-
-  <p class="col_red"><strong><%= @error %></strong></p>
-
-    </br>
+  
+  </br>
+  <p class="red_alert"><%= @error %></p>
+ 
     <div class="mb-3">
     <p class="col_silver">Enter your name: </p>            
-  	<input class="aaa" type="text" name="username" /> 
+  	<input class="aaa" type="text" name="username" 
+    value="<%= @username %>"/> 
     </div>
 
     <div class="mb-3">
-    <p class="col_silver">Enter your phone: </p>          <input class="aaa" type="text" name="phone" /> 
+    <p class="col_silver">Enter your phone: </p> 
+
+    <input class="aaa" type="text" name="phone" 
+    value="<%= @phone %>"/> 
     </div>
 
     <div class="mb-3">
     <p class="col_silver">Enter date and time: </p>   
-  	<input class="aaa" type="text" name="datetime" /> </br>
+  	<input class="aaa" type="text" name="datetime" value="<%= @datetime %>"/> </br>
     </div> 
 
     </br>
@@ -100,6 +104,7 @@
     $(function(){
     $('#color').simplecolorpicker();
     $('.aaa').css('background-color','aliceblue');
+    $('.red_alert').css('color','red');
     });
   </script>
   
