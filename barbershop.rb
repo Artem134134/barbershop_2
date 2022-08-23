@@ -19,29 +19,27 @@ post '/' do
          :phone => 'Enter your phone',
          :datetime => 'Enter datetime'}
 
-          # for each key-value pair
-   hh.each do |key, value|
-          # if parameter is empty
-   if params[key] == ''
-          # assign @error variable value from hash hh
-    @error = hh[key]
-          # return view
-    return erb :index
-  end
+# error output when parameter[key] is empty 
+@error = hh.select {|key,_| params[key] == ''}.values.join(", ")
+
+# if parameter is empty
+if @error != ''
+
+	# return view
+  return erb :index
 end
 
 	@title = 'Thank you!'
-	@message = "Dear visitor: #{@user_name},
+	@message = "Dear visitor: #{@username},
 	 your hairdresser: #{@hairdresser}, haircolor:#{@haircolor}
-	we'll be waiting for you at #{@date_time}."
-
+	we'll be waiting for you at #{@datetime}."
 	
 	f = File.open("./public/users.txt", "a")
 	f.write "Hairdresser: #{@hairdresser}
 	  Haircolor: #{@haircolor}
-	  User: #{@user_name}
+	  User: #{@username}
 	  Phone: #{@phone}
-	  Date and time: #{@date_time}\n"
+	  Date and time: #{@datetime}\n"
 	f.close
 	  erb :message	
 end
