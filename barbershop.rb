@@ -11,10 +11,10 @@ end
 post '/' do
 
 	@hairdresser = params[:hairdresser]
-	@haircolor = params[:haircolor]
-	@username = params[:username]
-	@phone = params[:phone]
-	@datetime = params[:datetime]
+	@haircolor =   params[:haircolor]
+	@username =    params[:username]
+	@phone =       params[:phone]
+	@datetime =    params[:datetime]
 
  		   # hash for parameter validation
    hh = {:username => 'Enter your name',

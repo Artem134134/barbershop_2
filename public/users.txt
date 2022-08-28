@@ -1,0 +1,30 @@
+Hairdresser: Gus Fring
+	  Haircolor: pink
+	  User: Gemmy
+	  Phone: 8927444333
+	  Date and time: 12.05 at 15:00
+Hairdresser: Gus Fring
+	  Haircolor: green
+	  User: Bob
+	  Phone: 8927444333
+	  Date and time: 17.05 at 17:30
+Hairdresser: none
+	  Haircolor: green
+	  User: a
+	  Phone: 12345
+	  Date and time: 343
+Hairdresser: none
+	  Haircolor: green
+	  User: Bob
+	  Phone: 12345
+	  Date and time: 234
+Hairdresser: none
+	  Haircolor: none
+	  User: Gemmy
+	  Phone: 12345
+	  Date and time: 12.05 at 15:00
+Hairdresser: Jessie Pinkman
+	  Haircolor: orange
+	  User: Bob
+	  Phone: 1234567867
+	  Date and time: 12.05 at 15:00
