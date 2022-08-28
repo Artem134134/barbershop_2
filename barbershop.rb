@@ -1,6 +1,8 @@
 require 'sinatra'
 require 'sinatra/reloader'
+require 'sqlite3'
 
+db = SQLite3::Database.new 'my_base.sqlite'
 
 get '/' do
 	  erb :index
