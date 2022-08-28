@@ -14,12 +14,12 @@ post '/' do
 	@haircolor =   params[:haircolor]
 	@username =    params[:username]
 	@phone =       params[:phone]
-	@datetime =    params[:datetime]
+	@datestamp =    params[:datestamp]
 
  		   # hash for parameter validation
    hh = {:username => 'Enter your name',
          :phone => 'Enter your phone',
-         :datetime => 'Enter datetime'}
+         :datestamp => 'Enter datestamp'}
 
 # error output when parameter[key] is empty 
 @error = hh.select {|key,_| params[key] == ''}.values.join(", ")
@@ -34,14 +34,14 @@ end
 	@title = 'Thank you!'
 	@message = "Dear visitor: #{@username},
 	 your hairdresser: #{@hairdresser}, haircolor:#{@haircolor}
-	we'll be waiting for you at #{@datetime}."
+	we'll be waiting for you at #{@datestamp}."
 	
 	f = File.open("./public/users.txt", "a")
 	f.write "Hairdresser: #{@hairdresser}
 	  Haircolor: #{@haircolor}
 	  User: #{@username}
 	  Phone: #{@phone}
-	  Date and time: #{@datetime}\n"
+	  Date and time: #{@datestamp}\n"
 	f.close
 	  erb :message	
 end
