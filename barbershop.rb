@@ -2,7 +2,18 @@ require 'sinatra'
 require 'sinatra/reloader'
 require 'sqlite3'
 
-db = SQLite3::Database.new 'my_base.sqlite'
+configure do 
+  @db = SQLite3::Database.new 'b_shop2.sqlite'
+  @db.execute 'CREATE TABLE IF NOT EXISTS "Users" (
+	"Id"	INTEGER PRIMARY KEY AUTOINCREMENT,
+	"Username"	TEXT,
+	"Phone"	TEXT,
+	"Datestamp"	TEXT,
+	"Hairdresser"	TEXT,
+	"Haircolor"	TEXT
+    )'
+@db.close
+end
 
 get '/' do
 	  erb :index
@@ -10,10 +21,10 @@ end
 
 post '/' do
 
-	@hairdresser = params[:hairdresser]
-	@haircolor =   params[:haircolor]
-	@username =    params[:username]
-	@phone =       params[:phone]
+	@hairdresser =  params[:hairdresser]
+	@haircolor =    params[:haircolor]
+	@username =     params[:username]
+	@phone =        params[:phone]
 	@datestamp =    params[:datestamp]
 
  		   # hash for parameter validation
