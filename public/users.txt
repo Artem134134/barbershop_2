@@ -1,0 +1,10 @@
+Hairdresser: Jessie Pinkman
+	  Haircolor: red
+	  User: Vasy
+	  Phone: 1234567867
+	  Date and time: 12-11-2022 at 12:30
+Hairdresser: none
+	  Haircolor: none
+	  User: aa
+	  Phone: 1234567867
+	  Date and time: 11-11-2022 at 11:00

@@ -20,7 +20,6 @@ get '/' do
 end
 
 post '/' do
-
 	@hairdresser =  params[:hairdresser]
 	@haircolor =    params[:haircolor]
 	@username =     params[:username]
@@ -79,6 +78,10 @@ get '/logfile' do
     @message = 'Thank you for being with us!'
     @log = File.read("./public/users.txt")          
     erb :logfile 
+end
+
+get '/contacts' do
+  erb :contacts
 end
 
 
