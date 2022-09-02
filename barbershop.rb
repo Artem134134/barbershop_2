@@ -84,4 +84,12 @@ get '/contacts' do
   erb :contacts
 end
 
+post '/contacts' do
+	@email =   params[:email]
+	@comment = params[:comment]
+
+	@message = "Thank you #{@email}, for being with us!"
+	erb :message
+end
+
 
