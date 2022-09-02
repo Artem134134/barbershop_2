@@ -2,59 +2,88 @@ require 'sinatra'
 require 'sinatra/reloader'
 require 'sqlite3'
 
+def get_db
+	return SQLite3::Database.new 'b_shop2.sqlite'
+end
+
 configure do 
-  @db = SQLite3::Database.new 'b_shop2.sqlite'
-  @db.execute 'CREATE TABLE IF NOT EXISTS "Users" (
+  db = get_db
+  db.execute 'CREATE TABLE IF NOT EXISTS "Users"(
 	"Id"	INTEGER PRIMARY KEY AUTOINCREMENT,
-	"Username"	TEXT,
+	"Name"	TEXT,
 	"Phone"	TEXT,
 	"Datestamp"	TEXT,
 	"Hairdresser"	TEXT,
-	"Haircolor"	TEXT
-    )'
-@db.close
+	"Color"	TEXT
+  )'
+ db.close
+end
+
+configure do 
+  db = get_db
+  db.execute 'CREATE TABLE IF NOT EXISTS "Contacts"(
+	"Id"	INTEGER PRIMARY KEY AUTOINCREMENT,
+	"Email"	TEXT,
+	"Comment"	TEXT
+)'
+ db.close
+end
+
+def save_form_data_to_database
+  db = get_db
+  db.execute 'INSERT INTO Users 
+    (Name,Phone,Datestamp,Hairdresser,Color)
+  VALUES (?, ?, ?, ?, ?)',
+  [@name, @phone, @datestamp,
+   @hairdresser, @color]
+  db.close
+end
+
+def save_form_data_to_database1
+  db = get_db
+  db.execute 'INSERT INTO Contacts(Email, Comment)
+  VALUES (?, ?)',
+  [@email, @comment]
+  db.close
 end
 
 get '/' do
-	  erb :index
+  erb :index
 end
+
 
 post '/' do
-	@hairdresser =  params[:hairdresser]
-	@haircolor =    params[:haircolor]
-	@username =     params[:username]
-	@phone =        params[:phone]
-	@datestamp =    params[:datestamp]
+	@hairdresser = params[:hairdresser]
+	@name        = params[:name]
+    @phone       = params[:phone]
+	@datestamp   = params[:datestamp]
+	@color       = params[:color]
 
- 		   # hash for parameter validation
-   hh = {:username => 'Enter your name',
-         :phone => 'Enter your phone',
-         :datestamp => 'Enter datestamp'}
+	@title = "Thank you, #{@name.capitalize}
+	          your message has been sent."
 
-# error output when parameter[key] is empty 
-@error = hh.select {|key,_| params[key] == ''}.values.join(", ")
+	# hash for parameter validation
+hh = {:name => 'Enter your name',
+      :phone => 'Enter your phone',
+      :datestamp => 'Enter datestamp'}
 
-# if parameter is empty
-if @error != ''
+# for each key-value pair
+hh.each do |key, value|
+  # if parameter is empty
+  if params[key] == ''
+    # переменной @error присвоить value из хеша hh
+    @error = hh[key]
 
-	# return view
-  return erb :index
+    # вернуть представление
+    return  erb :index
+  end
 end
 
-	@title = 'Thank you!'
-	@message = "Dear visitor: #{@username},
-	 your hairdresser: #{@hairdresser}, haircolor:#{@haircolor}
-	we'll be waiting for you at #{@datestamp}."
-	
-	f = File.open("./public/users.txt", "a")
-	f.write "Hairdresser: #{@hairdresser}
-	  Haircolor: #{@haircolor}
-	  User: #{@username}
-	  Phone: #{@phone}
-	  Date and time: #{@datestamp}\n"
-	f.close
-	  erb :message	
+save_form_data_to_database
+
+	  erb :message
 end
+
 
 get '/admin' do
      erb :admin
@@ -81,15 +110,34 @@ get '/logfile' do
 end
 
 get '/contacts' do
-  erb :contacts
+	erb :contacts		
 end
 
 post '/contacts' do
 	@email =   params[:email]
-	@comment = params[:comment]
+  @comment = params[:comment]
+	
+	@title = "Thank you! #{@email}"
 
-	@message = "Thank you #{@email}, for being with us!"
-	erb :message
+	# hash for parameter validation
+hh = {:email =>'Enter your email',
+	    :comment => 'Write your comment'}
+
+# for each key-value pair
+hh.each do |key, value|
+  # if parameter is empty
+  if params[key] == ''
+    # переменной @error присвоить value из хеша hh
+    @error = hh[key]
+
+    # вернуть представление
+    return  erb :contacts
+  end
+end
+
+save_form_data_to_database1
+
+	  erb :message
 end
 
 

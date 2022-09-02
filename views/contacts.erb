@@ -19,16 +19,18 @@
 		<h2>Our contacts: 8(+7442) 45-00-00</h2>
 	    </br>
 	    </br>
+	<p class="col_black"><%= @message %></p>
+	
 	<form action="/contacts" method="POST" role="form-control">    
 	<div class="mb-3">
   <label>Email address:</label>
-  <input name="email" type="email" class="form-control"  placeholder="name@example.com">
+  <input name="email" type="email" class="form-control"  placeholder="name@example.com" value="<%= @email %>">
 </br>
 
 </div>
 <div class="mb-3">
   <label>Comment:</label>
-  <textarea name="comment" type="text"class="form-control" rows="3" placeholder="text"></textarea>
+  <textarea name="comment" type="text"class="form-control" rows="3" placeholder="text" value="<%= @comment %>"></textarea>
 </div>
 
  </br>
