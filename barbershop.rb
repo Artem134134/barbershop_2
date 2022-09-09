@@ -56,17 +56,17 @@ def save_form_data_to_database1
 end
 
 get '/showusers' do
-	@db = get_db
-	@results = @db.execute 'select * from Users order by id desc'
-	@db.close
+	db = get_db
+	@results = db.execute 'select * from Users order by id desc'
+	db.close
 
 	erb :showusers
 end
 
 get '/showcontacts' do
-	get_db
-	@results = @db.execute 'select * from Contacts order by id desc'
-	@db.close
+	db = get_db
+	@results = db.execute 'select * from Contacts '
+	db.close
 
 	erb :showcontacts
 end
