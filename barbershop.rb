@@ -4,7 +4,10 @@ require 'sqlite3'
 
 # Method connect with database
 def get_db
-	return SQLite3::Database.new 'b_shop2.sqlite'
+	@db = SQLite3::Database.new 'b_template.sqlite'
+	# display result in hash from db
+	@db.results_as_hash = true
+	return @db 
 end
 
 # Configure application
@@ -61,7 +64,7 @@ end
 post '/' do
 	@hairdresser = params[:hairdresser]
 	@name        = params[:name]
-    @phone       = params[:phone]
+  @phone       = params[:phone]
 	@datestamp   = params[:datestamp]
 	@color       = params[:color]
 
@@ -112,7 +115,7 @@ end
 
 get '/logfile' do
     @message = 'Thank you for being with us!'
-    @log = File.read("./public/users.txt")          
+    @log = File.read("./views/b_shop2.sqlite")          
     erb :logfile 
 end
 
