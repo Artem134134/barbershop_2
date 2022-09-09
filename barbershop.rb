@@ -2,10 +2,12 @@ require 'sinatra'
 require 'sinatra/reloader'
 require 'sqlite3'
 
+# Method connect with database
 def get_db
 	return SQLite3::Database.new 'b_shop2.sqlite'
 end
 
+# Configure application
 configure do 
   db = get_db
   db.execute 'CREATE TABLE IF NOT EXISTS "Users"(
@@ -19,6 +21,7 @@ configure do
  db.close
 end
 
+# Configure application
 configure do 
   db = get_db
   db.execute 'CREATE TABLE IF NOT EXISTS "Contacts"(
@@ -29,6 +32,7 @@ configure do
  db.close
 end
 
+# Method save form data to database
 def save_form_data_to_database
   db = get_db
   db.execute 'INSERT INTO Users 
@@ -39,6 +43,7 @@ def save_form_data_to_database
   db.close
 end
 
+# Method save form data to database
 def save_form_data_to_database1
   db = get_db
   db.execute 'INSERT INTO Contacts(Email, Comment)
@@ -47,6 +52,7 @@ def save_form_data_to_database1
   db.close
 end
 
+# Index page with form
 get '/' do
   erb :index
 end
@@ -79,6 +85,7 @@ hh.each do |key, value|
   end
 end
 
+# method call to save to database table users
 save_form_data_to_database
 
 	  erb :message
@@ -135,6 +142,7 @@ hh.each do |key, value|
   end
 end
 
+# method call to save to database table contacts
 save_form_data_to_database1
 
 	  erb :message
