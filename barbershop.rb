@@ -4,7 +4,7 @@ require 'sqlite3'
 
 # Method connect with database
 def get_db
-	@db = SQLite3::Database.new 'b_template.sqlite'
+	@db = SQLite3::Database.new 'b_shop2.sqlite'
 	# display result in hash from db
 	@db.results_as_hash = true
 	return @db 
@@ -53,6 +53,14 @@ def save_form_data_to_database1
   VALUES (?, ?)',
   [@email, @comment]
   db.close
+end
+
+get '/showusers' do
+	@db = get_db
+	@results = @db.execute 'select * from Users order by id desc'
+	@db.close
+
+	erb :showusers
 end
 
 # Index page with form
@@ -111,12 +119,6 @@ post '/admin' do
 		@message = 'Access denied!'
 		erb :admin
     end
-end
-
-get '/showusers' do
-    @message = 'Thank you for being with us!'
-    @log = File.read("./views/b_shop2.sqlite")          
-    erb :showusers 
 end
 
 get '/contacts' do

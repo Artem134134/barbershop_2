@@ -19,14 +19,19 @@
       <%= @message %>
    </p>
 
+<table class="table">
+     <% @results.each do |row| %>
 
-	  <table border="1">
-		  <% @log.each_line do |line| %>
-      <tr><td><%= line %></td></tr>
-      <% end %>
+  <tr <%= "style='background-color: red; color: white;'" if row == @results.first %>>
+    <td><%= row[1] %></td>
+    <td><%= row[2] %></td>
+    <td><%= row[3] %></td>
+    <td><%= row[4] %></td>
+    <td><%= row[5] %></td>
+  </tr>
+
+<% end %>
     </table>
-
-    </br>
 
     <p ><a href="/admin">Back</a></p>
 
