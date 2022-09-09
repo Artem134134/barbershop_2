@@ -63,6 +63,14 @@ get '/showusers' do
 	erb :showusers
 end
 
+get '/showcontacts' do
+	get_db
+	@results = @db.execute 'select * from Contacts order by id desc'
+	@db.close
+
+	erb :showcontacts
+end
+
 # Index page with form
 get '/' do
   erb :index
