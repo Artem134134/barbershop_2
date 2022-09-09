@@ -113,10 +113,10 @@ post '/admin' do
     end
 end
 
-get '/logfile' do
+get '/showusers' do
     @message = 'Thank you for being with us!'
     @log = File.read("./views/b_shop2.sqlite")          
-    erb :logfile 
+    erb :showusers 
 end
 
 get '/contacts' do
