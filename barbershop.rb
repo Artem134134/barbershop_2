@@ -5,7 +5,17 @@ require 'sqlite3'
 def is_hairdresser_exists? db, name 
 	db.execute('select * from Hairdressers where name=?'
 		        ,[name]).size > 0
-	
+end
+
+def seed_db db, hairdressers
+
+	hairdressers.each do |hairdresser|
+	  if !is_hairdresser_exists? db, hairdresser
+	  	db.execute 'insert into Hairdressers(name) values(?)', [hairdresser]
+	  end
+end
+
+
 # Method connect with database
 def get_db
 	@db = SQLite3::Database.new 'b_shop2.sqlite'
@@ -37,6 +47,8 @@ db.execute 'CREATE TABLE IF NOT EXISTS "Hairdressers"(
 	"Id"	INTEGER PRIMARY KEY AUTOINCREMENT,
 	"Name"	TEXT
 )'
+
+seed_db db, ['Jessie Pinkman','Walter White','Gus Fring','Bob Ley']
 
  db.close
 end
