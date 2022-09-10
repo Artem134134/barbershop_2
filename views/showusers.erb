@@ -21,15 +21,18 @@
       <%= @message %>
    </p>
 
-<table class="table">
-  <tr>
-    <th>Name</th>
-    <th>Phone</th>
-    <th>E-mail</th>
-    <th>Hairdresser</th>
-    <th>Hair color</th>
-  </tr>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Phone</th>
+      <th>E-mail</th>
+      <th>Hairdresser</th>
+      <th>Hair color</th>
+    </tr>
+    </thead>
 
+    <body>
      <% @results.each do |row| %>
 
   <tr <%= "style='background-color: tomato; color: white;'" if row == @results.first %>>
@@ -40,12 +43,13 @@
     <td><%= row[5] %></td>
   </tr>
 
+
 <% end %>
+</body>
     </table>
 
     </br>
     </br>
-    <p ><a href="/admin">Back</a></p>
     <p ><a href="/">Main page</a></p>
 
 </body>
