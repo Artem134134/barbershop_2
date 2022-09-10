@@ -2,6 +2,10 @@ require 'sinatra'
 require 'sinatra/reloader'
 require 'sqlite3'
 
+def is_hairdresser_exists? db, name 
+	db.execute('select * from Hairdressers where name=?'
+		        ,[name]).size > 0
+	
 # Method connect with database
 def get_db
 	@db = SQLite3::Database.new 'b_shop2.sqlite'
@@ -33,7 +37,7 @@ db.execute 'CREATE TABLE IF NOT EXISTS "Hairdressers"(
 	"Id"	INTEGER PRIMARY KEY AUTOINCREMENT,
 	"Name"	TEXT
 )'
- 
+
  db.close
 end
 
