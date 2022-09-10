@@ -52,13 +52,14 @@
 
   <form action="/" method="POST">
       <div class="mb-3">
+      <label class="col_silver">Choose a hairdresser:</label>
       <select name="hairdresser"  class="form-select">
-  <option class="aaa" value="none" selected>
-  Choose a hairdresser:
- </option>
-  <option value="Walter White">Walter White</option>
-  <option value="Jessie Pinkman">Jessie Pinkman</option>
-  <option value="Gus Fring">Gus Fring</option>
+
+
+<% @hairdressers.each do |item| %>
+  <option <%= @hairdresser == item['Name'] ? 'selected' : ''%>><%= item['Name'] %></option>
+<% end %>
+
 </select>
 </div>
 

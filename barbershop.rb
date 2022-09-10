@@ -3,8 +3,7 @@ require 'sinatra/reloader'
 require 'sqlite3'
 
 def is_hairdresser_exists? db, name 
-	db.execute('select * from Hairdressers where name=?'
-		        ,[name]).size > 0
+	db.execute('select * from Hairdressers where name=?',[name]).size > 0
 end
 
 def seed_db db, hairdressers
@@ -13,8 +12,8 @@ def seed_db db, hairdressers
 	  if !is_hairdresser_exists? db, hairdresser
 	  	db.execute 'insert into Hairdressers(name) values(?)', [hairdresser]
 	  end
+  end
 end
-
 
 # Method connect with database
 def get_db
@@ -22,6 +21,11 @@ def get_db
 	# display result in hash from db
 	@db.results_as_hash = true
 	return @db 
+end
+
+before do 
+	db = get_db
+	@hairdressers = db.execute 'select * from Hairdressers'
 end
 
 # Configure application
@@ -178,5 +182,3 @@ save_form_data_to_database1
 
 	  erb :message
 end
-
-
