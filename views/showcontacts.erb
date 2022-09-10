@@ -30,7 +30,7 @@
   <tbody>
      <% @results.each do |row| %>
 
-  <tr <%= "style='background-color: tomato; color: white;'" if row == @results.first %>>
+  <tr <%= row == @results %>>
     <td><%= row[1] %></td>
     <td><%= row[2] %></td>
   </tr>

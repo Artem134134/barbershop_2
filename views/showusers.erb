@@ -35,12 +35,12 @@
     <tbody>
      <% @results.each do |row| %>
 
-  <tr <%= "style='background-color: tomato; color: white;'" if row == @results.first %>>
+  <tr <%= row == @results %>>
     <td><%= row[1] %></td>
     <td><%= row[2] %></td>
     <td><%= row[3] %></td>
     <td><%= row[4] %></td>
-    <td><%= row[5] %></td>
+    <td style="background-color: <%= row[5] %>"><%= row[5] %></td>
   </tr>
 
 
