@@ -32,7 +32,7 @@
     </tr>
     </thead>
 
-    <body>
+    <tbody>
      <% @results.each do |row| %>
 
   <tr <%= "style='background-color: tomato; color: white;'" if row == @results.first %>>
@@ -45,7 +45,7 @@
 
 
 <% end %>
-</body>
+</tbody>
     </table>
 
     </br>

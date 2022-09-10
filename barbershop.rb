@@ -21,11 +21,7 @@ configure do
 	"Hairdresser"	TEXT,
 	"Color"	TEXT
   )'
- db.close
-end
 
-# Configure application
-configure do 
   db = get_db
   db.execute 'CREATE TABLE IF NOT EXISTS "Contacts"(
 	"Id"	INTEGER PRIMARY KEY AUTOINCREMENT,

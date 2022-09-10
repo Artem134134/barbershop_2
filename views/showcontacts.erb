@@ -26,7 +26,8 @@
   <tr>
     <th>E-mail</th>
     <th>Comment</th>
-  </tr>
+
+  <tbody>
      <% @results.each do |row| %>
 
   <tr <%= "style='background-color: tomato; color: white;'" if row == @results.first %>>
@@ -37,7 +38,7 @@
 
 <% end %>
     </table>
-
+  </tbody>
   </br>
   </br>
     <p ><a href="/">Main page</a></p>
