@@ -28,6 +28,12 @@ configure do
 	"Email"	TEXT,
 	"Comment"	TEXT
 )'
+
+db.execute 'CREATE TABLE IF NOT EXISTS "Hairdressers"(
+	"Id"	INTEGER PRIMARY KEY AUTOINCREMENT,
+	"Name"	TEXT
+)'
+ 
  db.close
 end
 
