@@ -65,7 +65,7 @@ end
 
 get '/showcontacts' do
 	db = get_db
-	@results = db.execute 'select * from Contacts '
+	@results = db.execute 'select * from Contacts order by id desc'
 	db.close
 
 	erb :showcontacts

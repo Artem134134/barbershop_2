@@ -15,22 +15,30 @@
   <body class="col_azure">
 
     <h1 id="col_salmon">Booked up:</h1>
+    
+    </br>
     <p class="col_black" style="text-align:center;">
       <%= @message %>
    </p>
 
 <table class="table">
+
+  <tr>
+    <th>E-mail</th>
+    <th>Comment</th>
+  </tr>
      <% @results.each do |row| %>
 
-  <tr <%= "style='background-color: red; color: white;'" if row == @results.first %>>
-    <td><%= row[0] %></td>
+  <tr <%= "style='background-color: tomato; color: white;'" if row == @results.first %>>
     <td><%= row[1] %></td>
+    <td><%= row[2] %></td>
   </tr>
 
 <% end %>
     </table>
 
-
+  </br>
+  </br>
     <p ><a href="/">Main page</a></p>
 
 </body>
