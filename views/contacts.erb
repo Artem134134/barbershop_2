@@ -23,20 +23,20 @@
 	    <br/>
 	<p class="col_black"><%= @message %></p>
 	
-	<form action="/contacts" method="POST" role="form-control">    
-	<div class="mb-3">
+	<form action="/contacts" method="POST" role="form-control"> 
+
+<div class="mb-3">
   <label>Email address:</label>
   <input name="email" type="email" class="form-control"  placeholder="name@example.com" value="<%= @email %>">
 <br/>
 
-</div>
 <div class="mb-3">
   <label>Comment:</label>
   <textarea name="comment" type="text"class="form-control" rows="3" placeholder="text" value="<%= @comment %>"></textarea>
 </div>
 
  <br/>
-  <div class="mb-3">
+ <div class="mb-3">
     <button type="submit" class="btn btn-primary mb-3">Sign up</button>
   </div>
 </form>
