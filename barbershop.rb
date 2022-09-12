@@ -66,6 +66,7 @@ def save_form_data_to_database
   [@name, @phone, @datestamp,
    @hairdresser, @color]
   db.close
+
 end
 
 # Method save form data to database

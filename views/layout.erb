@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Barber Shop template</title>
+		<!--<script src="script.js"></script>-->	
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<!-- Bootstrap -->	
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="/vendor/jquery-1.9.1.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="/vendor/bootstrap/js/bootstrap.min.js"></script>
+    
+	<script src="jquery.simplecolorpicker.js"></script>
+	<link rel="stylesheet" href="jquery.simplecolorpicker.css">
+
+	<!--don't work!!!<script src="jquery.datetimepicker.js"></script>
+	<link rel="stylesheet" href="jquery.datetimepicker.css">-->
+
+	</head>
+	<body>
+	
+<thead>		
+<tbody >
+  <nav  aria-label="Page navigation example">
+   <ul class="pagination" >
+   	<li class="page-item" ><a class="page-link" href="/">Main page</a></li> 
+    <li class="page-item" ><a class="page-link" href="/admin">Administration area...</a></li> 
+    <li class="page-item"><a class="page-link" href="/contacts">Contacts</a></li>
+    <li class="page-item"><a class="page-link" href="/showusers">Booked up</a></li>
+    <li class="page-item"><a class="page-link" href="/showcontacts">Email & comments</a></li>
+  </ul>
+</tbody>
+</thead>
+
+			<div>
+			      <%if @error && @error.length > 0 then %>
+			          <div class="alert alert-danger"><%=@error%></div>
+			      <% end %>
+			      <%= yield %>
+			</div>
+
+	</div>
+
+
+  </body>
+</html>
