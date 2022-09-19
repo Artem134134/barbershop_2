@@ -1,6 +1,8 @@
+require 'rubygems'
 require 'sinatra'
-require 'sinatra/reloader'
 require 'sqlite3'
+require 'sinatra/reloader'
+require 'sinatra/activerecord'
 
 def is_hairdresser_exists? db, name 
 	db.execute('select * from Hairdressers where name=?',[name]).size > 0
