@@ -5,8 +5,8 @@ This app
 ____
 
 ###Technologies:###
-**PLATFORMS
-  x86_64-linux**
+
+**PLATFORMS x86_64-linux**
 + Ruby 3.0.1
 + Sinatra 3.2.0
 + sinatra-contrib 3.2.0
