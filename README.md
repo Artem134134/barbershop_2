@@ -1,7 +1,11 @@
 # Yo!    :sunny:  :palm_tree:  :sunglasses:
 ## Barber Shop 2
 
-This app  
+***In this application*** - *you can visit our Barbershop*.
++ On the main page you fill out the form to sign up for a haircut or coloring.
++ Contacts page - you will see our phone number, a form to fill out with an email and a message field.
++ Booked up - you will see a list of those who have signed up for our salon.
++ Page admin log in using your login and password. 
 ____
 
 ### Technologies: ###
