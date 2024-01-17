@@ -32,6 +32,8 @@ ____
 
      bundle exec ruby app.rb    # To run the sample
 
+     Use Ctrl-C                 # To stop
+
 ```
 Then open [http://localhost:4567/](http://localhost:4567/)
 
