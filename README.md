@@ -37,9 +37,13 @@ Then open [http://localhost:4567/](http://localhost:4567/)
 
 ___
 
-## Screen shot:
+### Screen shot:
+![Main page](https://github.com/Artem134134/barbershop_2/blob/main/public/screenshot/1.png)
+![Contacts](https://github.com/Artem134134/barbershop_2/blob/main/public/screenshot/2.png)
+![Booked up](https://github.com/Artem134134/barbershop_2/blob/main/public/screenshot/3.png)
+![Email & comments](https://github.com/Artem134134/barbershop_2/blob/main/public/screenshot/4.png)
+![Administration area](https://github.com/Artem134134/barbershop_2/blob/main/public/screenshot/5.png)
 
 
 
-
-Cleaned version of [ruby-sinatra-bootstrap](https://github.com/bootstrap-ruby/sinatra-bootstrap)
+***Cleaned version of*** [ruby-sinatra-bootstrap](https://github.com/bootstrap-ruby/sinatra-bootstrap)
