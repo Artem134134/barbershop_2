@@ -144,7 +144,7 @@ post '/admin' do
 	@login = params[:login]
 	@password = params[:password]
 
-	if @login == 'admin' and @password == 'secret' 
+	if @login == 'Art' and @password == '@Volga' 
 		@title = 'Access is allowed. Welcome'
 		@message = "Hi, admin: \ 'Artem134134'\ "
 		erb :protected
