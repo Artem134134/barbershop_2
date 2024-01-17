@@ -4,7 +4,7 @@
 This app  
 ____
 
-###Technologies:###
+### Technologies: ###
 
 **PLATFORMS x86_64-linux**
 + Ruby 3.0.1
@@ -18,7 +18,7 @@ ____
 + CSS
   + bootstrap 5
 ____
-### Download and run barbershop2 :
+### Download and run barbershop_2 :
 
 ```ruby
      git clone https://github.com/Artem134134/barbershop_2.git
