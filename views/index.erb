@@ -15,8 +15,10 @@
 
 
 <script src="jquery.simplecolorpicker.js"></script>
+<link rel="stylesheet" href="jquery.simplecolorpicker.css">
 
-  <link rel="stylesheet" href="jquery.simplecolorpicker.css">
+  <script src="jquery.datetimepicker.full.min.js"></script>
+  <link rel="stylesheet" href="jquery.datetimepicker.min.css">
     
 </head>
 
@@ -90,7 +92,7 @@
 
     <div class="mb-3">
     <p class="col_silver">Enter date and time: </p>   
-  	<input class="aaa" type="text" name="datestamp" value="<%= @datestamp %>"/> <br/>
+  	<input class="aaa" id="datetimepicker" type="text" name="datestamp" value="<%= @datestamp %>"/> <br/>
     </div> 
 
     <br/>
@@ -103,6 +105,7 @@
     $('.aaa').css('background-color','aliceblue');
     $('.red_alert').css('color','red');
     });
+    $('#datetimepicker').datetimepicker();
   </script>
   
 
