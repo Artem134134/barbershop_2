@@ -13,11 +13,14 @@ ____
 **PLATFORMS x86_64-linux**
 + Ruby 3.0.1
 + Sinatra 3.2.0
+  + tux 0.3.0
 + sinatra-contrib 3.2.0
 + sinatra-activerecord 2.0.27
 + sqlite3 1.7.0
 + jquery-1.9.1
-+ tux 0.3.0
+  + plugins:
+    + simple-color-picker
+    + data-time-picker
 + HTML
 + CSS
   + bootstrap 5
